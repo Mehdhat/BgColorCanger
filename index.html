@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        button {
+            outline: none;
+            border: 3px solid white;
+            background-color: black;
+            color: white;
+            font-size: 28px;
+            font-family: "Montserrat";
+            padding: 20px;
+            cursor: pointer;
+            opacity: 0.6;
+        }
+
+        h2 {
+            font-family: "Montserrat";
+            font-size: 30px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="section">
+        <button id="btn">Background Color Change</button>
+        <h2 id="code"></h2>
+    </section>
+    <script>
+    let button = document.getElementById("btn");
+    let h2 = document.getElementById("code");
+    let bg = document.getElementById("section");
+
+    button.addEventListener("click", () => {
+        let color = "#";
+        color += Math.random().toString(16).slice(2, 8).toUpperCase();
+        bg.style.backgroundColor = color;
+        h2.innerText = color;
+    });
+
+    </script>
+
+</body>
+
+</html>
